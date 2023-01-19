@@ -16,6 +16,10 @@ app.config['UPLOAD_FOLDER'] = "./uploads"
 def index():
     return render_template("index.html")
 
+@app.route("/menu", methods=['POST'])
+def menu():
+    return render_template("menu.html")
+
 if __name__ == "__main__":
     # active mode
     app.run(host='0.0.0.0', port=80, debug=False)
