@@ -8,13 +8,21 @@
 from flask import Flask
 from flask import render_template, request
 from os import path, listdir
+import login_service
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "./uploads"
 
-@app.route("/", methods=['POST'])
+@app.route("/")
 def index():
     return render_template("index.html")
+
+@app.route("/", methods=['POST'])
+def index_login():
+    usr = request.form["uname"]
+    passwd = request.form["passwd"]
+    login_service.authenticate(usr, passwd)
+    return "200"  # TODO return #t/#f for user found/missing
 
 @app.route("/menu", methods=['POST'])
 def menu():
