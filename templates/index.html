@@ -1,7 +1,14 @@
 {% block head %}
     <title> Caelestis Node 21 </title>
+    <link rel="stylesheet" href="static/default.css">
 {% endblock %}
 
 {% block body %}
-    This is some random text on my main page!
+    Node 21 Login:<br>
+    <br>
+    <form method="POST">
+        <div><input id="uname" name="text" type="text" minlength="8" maxlength="16" placeholder="Username" size="17"></div>
+        <div><input id="passwd" name="text" type ="password" minlength="8" maxlength="16" placeholder="Password" size="17"></div>
+        <div><input id="lgn" type="submit" value="Login" /></div>
+    </form>
 {% endblock %}
